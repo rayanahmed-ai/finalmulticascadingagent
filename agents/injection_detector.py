@@ -88,7 +88,7 @@ User Input:
 """
 
         response = client.chat.completions.create(
-            model="meta-llama/llama-guard-4-12b",
+            model="llama-guard-3-8b",
             messages=[
                 {
                     "role": "user",

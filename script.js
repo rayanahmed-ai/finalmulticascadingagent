@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultDisplay = document.getElementById('result-display');
     const statusIndicator = document.getElementById('status-indicator');
 
-    const API_URL = '/check';
+    const API_URL = window.location.origin + '/check';
 
     checkBtn.addEventListener('click', async () => {
         const prompt = promptInput.value.trim();
@@ -26,7 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             if (!response.ok) {
-                throw new Error('Server responded with an error');
+                const errorData = await response.json().catch(() => ({}));
+                throw new Error(errorData.error || 'Server responded with an error');
             }
 
             const data = await response.json();
@@ -89,8 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
         statusIndicator.textContent = 'Error';
         statusIndicator.className = 'status-block';
         resultDisplay.innerHTML = `
-            <div class="result-verdict" style="color: var(--error)">Connection Failed</div>
+            <div class="result-verdict" style="color: var(--error)">Request Failed</div>
             <p style="color: var(--text-muted)">${message}</p>
+            <p style="font-size: 0.8rem; margin-top: 1rem; color: var(--text-muted)">Tip: Check your Render logs for more details.</p>
         `;
     }
 
