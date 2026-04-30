@@ -142,16 +142,8 @@ def hf_inference():
 
 
 if __name__ == "__main__":
-    print("-" * 60)
-    print("  Pre-warming models...")
-    try:
-        RefereeAgent("pre-warm").decide()
-        print("  Models loaded successfully.")
-    except Exception as e:
-        print(f"  Warning: Pre-warm failed: {e}")
-    
     print("=" * 60)
-    print("  LLM Guardrail Server with HF Support")
+    print("  LLM Guardrail Server (API Edition)")
     port = int(os.environ.get("PORT", 5001))
     print(f"  Running at: http://0.0.0.0:{port}")
     print("=" * 60)

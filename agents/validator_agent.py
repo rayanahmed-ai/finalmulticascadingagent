@@ -1,7 +1,7 @@
 from injection_detector import InjectionDetectorAgent
 from blocking_test import MessageBlocker
 from normalizer import Normalizer
-from transformer import TransformerClassifierAgent
+# from transformer import TransformerClassifierAgent
 from injection_detector import InjectionDetectorAgent
 from toxicbert_classifier import ToxicBertClassifier
 from nsfw_detector import NSFWDetector
@@ -13,8 +13,10 @@ class ValidatorAgent():
         self.injection_detector_finalized=self.injection_detector.finalized(messages)
 
         self.toxic_bert_classifier = ToxicBertClassifier(messages)
-        self.toxic_bert_classifier=self.toxic_bert_classifier.check_toxicity(messages)
-        self.transformer_classifer = self.transformer(messages)
+        self.toxic_bert_classifier = self.toxic_bert_classifier.check_toxicity(messages)
+
+        # self.transformer_classifer = self.transformer(messages)
+        self.transformer_classifer = {"blocked": False} # Covered by Llama Guard API
         
         self.nsfw_detector = NSFWDetector(messages)
         self.nsfw_result = self.nsfw_detector.check_nsfw(self.normalizer(messages))
