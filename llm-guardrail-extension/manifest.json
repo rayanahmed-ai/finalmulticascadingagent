@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "LLM Guardrail Extension",
+  "version": "1.0.0",
+  "description": "Intercepts prompts on AI playgrounds and runs them through a Validator → Evaluator → Referee guardrail pipeline.",
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "http://localhost:5001/*",
+    "http://127.0.0.1:5001/*",
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle",
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "LLM Guardrail"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

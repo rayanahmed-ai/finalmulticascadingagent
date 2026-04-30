@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LLM Guardrail</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <span class="shield">🛡️</span>
+                <div>
+                    <h1>LLM Guardrail</h1>
+                    <p class="subtitle">Protected AI Playground</p>
+                </div>
+            </div>
+            <div id="server-status" class="status-dot status-unknown" title="Server status"></div>
+        </header>
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="check">Prompt Check</button>
+            <button class="tab-btn" data-tab="hf">Hugging Face</button>
+            <button class="tab-btn" data-tab="settings">⚙️</button>
+        </div>
+
+        <!-- Prompt Check Tab -->
+        <div id="tab-check" class="tab-content active">
+            <div class="section">
+                <label for="prompt-input" class="label">Universal Guardrail</label>
+                <textarea id="prompt-input" class="textarea" placeholder="Test a prompt against the pipeline..."
+                    rows="4"></textarea>
+            </div>
+            <button id="check-btn" class="btn-primary">
+                <span id="btn-text">⚡ Check Prompt</span>
+                <span id="btn-spinner" class="spinner hidden"></span>
+            </button>
+        </div>
+
+        <!-- Hugging Face Tab -->
+        <div id="tab-hf" class="tab-content">
+            <div class="section">
+                <label class="label">Model Configuration</label>
+                <input type="text" id="hf-model-id" class="input-text"
+                    placeholder="Model ID (e.g. runwayml/stable-diffusion-v1-5)" value="gpt2">
+
+                <div class="input-group">
+                    <select id="hf-task" class="select">
+                        <option value="text-generation">Text Generation</option>
+                        <option value="text-to-image">Text to Image</option>
+                    </select>
+                </div>
+
+                <textarea id="hf-prompt" class="textarea" placeholder="Enter prompt for the model..."
+                    rows="4"></textarea>
+            </div>
+            <button id="hf-run-btn" class="btn-primary btn-hf">
+                <span id="hf-btn-text">🚀 Run Inference</span>
+                <span id="hf-btn-spinner" class="spinner hidden"></span>
+            </button>
+
+            <!-- HF Result Container -->
+            <div id="hf-result-container" class="hf-result hidden">
+                <div class="label">Model Output</div>
+                <div id="hf-output-text" class="hf-output-text hidden"></div>
+                <img id="hf-output-image" class="hf-output-image hidden" />
+            </div>
+        </div>
+
+        <!-- Settings Tab -->
+        <div id="tab-settings" class="tab-content">
+            <div class="section">
+                <label class="label">Backend API URL</label>
+                <input type="text" id="api-url-input" class="input-text" placeholder="http://127.0.0.1:5001" value="http://127.0.0.1:5001">
+                <p class="subtitle" style="margin-top: 8px;">Enter your deployed server URL (e.g., from Render/Railway).</p>
+            </div>
+            <button id="save-settings-btn" class="btn-primary">Save Settings</button>
+        </div>
+
+        <!-- Result Card (Shared) -->
+        <div id="result-card" class="result-card hidden">
+            <div id="result-icon" class="result-icon"></div>
+            <div class="result-details">
+                <div id="result-action" class="result-action"></div>
+                <div id="result-risk" class="result-risk"></div>
+                <div id="result-reason" class="result-reason"></div>
+                <div id="result-agents" class="result-agents hidden"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span id="current-server-text">Pipeline: <code>127.0.0.1:5001</code></span>
+        </footer>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

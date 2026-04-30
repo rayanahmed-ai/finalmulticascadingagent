@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multicascading Agent | AI Guardrails</title>
+    <meta name="description" content="The ultimate cascading guardrail system for LLMs. Protect your AI interactions with multi-agent validation.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">Multicascading<span>Agent</span></div>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#demo">Live Demo</a></li>
+                <li><a href="#extension" class="btn-secondary">Get Extension</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Secure Your AI with <span class="gradient-text">Cascading Guardrails</span></h1>
+                <p>A multi-layered defense system that validates, filters, and secures LLM interactions in real-time. Built for reliability, designed for safety.</p>
+                <div class="hero-btns">
+                    <a href="#demo" class="btn-primary">Try Live Demo</a>
+                    <a href="#extension" class="btn-outline">Add to Chrome</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="orb-container">
+                    <div class="orb"></div>
+                    <div class="orb-ring"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="container">
+                <h2 class="section-title">What is it?</h2>
+                <p class="section-subtitle">Multicascading Agent is an advanced safety layer that sits between users and LLMs. It uses a "cascade" of specialized agents to scrutinize every prompt.</p>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>Multi-Agent Architecture</h3>
+                        <p>Unlike single-pass filters, we use multiple agents (NSFW, Toxicity, Injection) that work in sequence to ensure maximum coverage.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Real-time Validation</h3>
+                        <p>Lightning-fast checks ensure your user experience remains smooth while staying protected.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Seamless Integration</h3>
+                        <p>Works as a standalone server or via our Chrome Extension to protect you anywhere on the web.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features">
+            <div class="container">
+                <h2 class="section-title">Core Protection</h2>
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">🛡️</div>
+                        <div class="feature-text">
+                            <h3>Injection Detection</h3>
+                            <p>Prevents prompt injection attacks and jailbreaks before they compromise your system.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🚫</div>
+                        <div class="feature-text">
+                            <h3>NSFW Filtering</h3>
+                            <p>State-of-the-art vision and text models to block inappropriate content.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">⚠️</div>
+                        <div class="feature-text">
+                            <h3>Toxicity Analysis</h3>
+                            <p>Detects and mitigates toxic, hateful, or harassing language in real-time.</p>
+                        </div>
+                    </div>
+                    <div class="feature-item">
+                        <div class="feature-icon">🔄</div>
+                        <div class="feature-text">
+                            <h3>Cascading Logic</h3>
+                            <p>Advanced referee agent coordinates between all specialized agents for a final verdict.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="demo">
+            <div class="container">
+                <h2 class="section-title">Live Demo</h2>
+                <div class="demo-container">
+                    <div class="demo-input">
+                        <textarea id="prompt-input" placeholder="Type a prompt to test the guardrails..."></textarea>
+                        <button id="check-btn" class="btn-primary">Analyze Prompt</button>
+                    </div>
+                    <div class="demo-output">
+                        <div id="status-indicator" class="status-idle">Ready</div>
+                        <div id="result-display">
+                            <p class="placeholder-text">Analysis results will appear here.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="extension">
+            <div class="container">
+                <div class="extension-cta">
+                    <h2>Take Protection Everywhere</h2>
+                    <p>Install the Multicascading Agent extension to secure your AI interactions on any website.</p>
+                    <div class="install-steps">
+                        <h3>How to Install:</h3>
+                        <ol>
+                            <li>Download the <code>llm-guardrail-extension</code> folder.</li>
+                            <li>Open Chrome and go to <code>chrome://extensions</code>.</li>
+                            <li>Enable <strong>Developer Mode</strong> in the top right.</li>
+                            <li>Click <strong>Load unpacked</strong> and select the extension folder.</li>
+                        </ol>
+                    </div>
+                    <a href="#" class="btn-primary">Download Extension (ZIP)</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Multicascading Agent. Secure AI for everyone.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
