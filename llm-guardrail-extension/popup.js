@@ -32,7 +32,7 @@ const saveSettingsBtn = document.getElementById("save-settings-btn");
 const currentServerText = document.getElementById("current-server-text");
 
 // Default
-const DEFAULT_SERVER = "http://127.0.0.1:5001";
+const DEFAULT_SERVER = "https://finalmulticascadingagent-4.onrender.com";
 
 // ─── Tabs ───────────────────────────────────────────────────────────────────
 const tabBtns = document.querySelectorAll(".tab-btn");

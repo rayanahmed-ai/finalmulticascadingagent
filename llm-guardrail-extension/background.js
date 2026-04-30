@@ -5,8 +5,8 @@
  * calls the Python guardrail server, and returns the decision.
  */
 
-// Default local server
-const DEFAULT_SERVER = "http://127.0.0.1:5001/check";
+// Default hosted server on Render
+const DEFAULT_SERVER = "https://finalmulticascadingagent-4.onrender.com/check";
 
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (message.type === "CHECK_PROMPT") {
