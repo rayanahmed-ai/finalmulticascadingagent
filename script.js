@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayResult(data);
         } catch (error) {
             console.error('Error:', error);
-            displayError('Could not connect to the guardrail server. Make sure server.py is running on port 5001.');
+            displayError(`${error.message} (Tried to hit: ${API_URL})`);
         } finally {
             setLoading(false);
         }
